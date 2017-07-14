@@ -1,5 +1,7 @@
-console.log("my application's front-end JS");
 
+var angular = require('angular');
+var angularroute = require('angular-route');
+var bootstrap = require('./bootstrap.css');
 var app = angular.module("myApp", ["ngRoute"]);
 
 app.config(function($routeProvider) {
