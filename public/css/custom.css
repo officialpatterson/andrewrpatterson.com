@@ -1,0 +1,45 @@
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+h1 {
+    color: black;
+    font-weight: bolder;
+    font-size: 60px;
+    text-align: left;
+    margin-left: 25px;
+} 
+.nav{
+border-bottom: dotted 1px lightgray;
+padding: 30px;
+
+}
+.nav-pills > li > a{
+font-weight: bold;
+color: black;
+font-size: 18px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+        
+        background-color: yellow;
+    }
+
+.nav-pills > li > a:hover {
+    background-color: yellow;       
+}
+.content{
+padding: 30px;
+line-height: 1.5;
+
+}
+.content > p{
+    margin-bottom: 2em;
+}
+p.footnote{
+    color: black;
+    background-color: yellow;
+    font-weight: bold;
+    }

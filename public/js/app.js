@@ -1,16 +1,13 @@
 
+console.log("loading app specific code");
 var angular = require('angular');
 var angularroute = require('angular-route');
 var app = angular.module("myApp", ["ngRoute"]);
 
 app.config(function($routeProvider) {
-    console.log("routes");
   $routeProvider
-  .when("/", {
-    template: "<p>Home</p>"
-  })
-  .when("/about", {
-    template : "<p>About</p>"
+  .when("/profile", {
+    templateURL:'partials/profile'
   })
   .when("/invest", {
     template : "<p>Invest</p>"

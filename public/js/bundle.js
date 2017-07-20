@@ -68,19 +68,15 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 
+console.log("loading app specific code");
 var angular = __webpack_require__(1);
 var angularroute = __webpack_require__(3);
-var bootstrap = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./bootstrap.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 var app = angular.module("myApp", ["ngRoute"]);
 
 app.config(function($routeProvider) {
-    console.log("routes");
   $routeProvider
-  .when("/", {
-    template: "<p>Home</p>"
-  })
-  .when("/about", {
-    template : "<p>About</p>"
+  .when("/profile", {
+    templateURL:'partials/profile'
   })
   .when("/invest", {
     template : "<p>Invest</p>"
