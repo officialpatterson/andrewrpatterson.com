@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Andrew Patterson</title>
+        <base href="/">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="/static/libs/bootstrap/dist/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  
+        <script src="/static/libs/angular/angular.min.js"></script>
+        <script src="/static/libs/angular-route/angular-route.min.js"></script>
+
+        <script src="https://use.fontawesome.com/4af4026c41.js"></script>
+
+        <script src="/static/js/app.js"></script>
+        <link rel="stylesheet" href="/static/css/custom.css">
+    </head>
+    <body ng-app="myApp">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                <h1> Andrew R. Patterson</h1>  
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <ul class="nav nav-pills nav-justified">
+                        <li role="presentation"><a href="#!/profile"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a></li>
+                        <li role="presentation"><a href="#!/blog"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i> Blog</a></li>
+                        <li role="presentation"><a href="/github"><i class="fa fa-code-fork" aria-hidden="true"></i> GitHub</a></li>
+                        <li role="presentation"><a href="#!/message"><i class="fa fa-envelope-o" aria-hidden="true"></i> Message</a></li>
+                    </ul>
+                </div>
+                <div ng-view></div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
