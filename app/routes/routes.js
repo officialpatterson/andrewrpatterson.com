@@ -7,7 +7,7 @@ var router = express.Router()
 
 
 //route to the admin page
-router.get('/admin', function(req, res){
+router.get('/admin/*', function(req, res){
     res.sendView('admin.html');
 });   
 

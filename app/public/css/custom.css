@@ -3,13 +3,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
 }
-
+.logo{
+    border-bottom: solid 20px yellow;
+}
 h1 {
     color: black;
     font-weight: bolder;
     font-size: 60px;
     text-align: left;
     margin-left: 25px;
+    margin-right:20px;
 } 
 .nav{
 border-bottom: dotted 1px lightgray;
@@ -42,4 +45,51 @@ p.footnote{
     color: black;
     background-color: yellow;
     font-weight: bold;
-    }
+}
+.btn-sample { 
+  color: #000000; 
+  background-color: #FFFF00; 
+  border-color: #D3D3D3; 
+  border-radius: 0;
+  font-weight: bolder;
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #000000; 
+  background-color: #FFFF99; 
+  border-color: #D3D3D3; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #FFFF00; 
+  border-color: #D3D3D3; 
+} 
+ 
+.btn-sample .badge { 
+  color: #FFFF00; 
+  background-color: #000000; 
+}

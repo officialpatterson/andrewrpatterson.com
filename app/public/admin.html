@@ -1,7 +1,7 @@
-<html>
+<html ng-app="adminApp">
     <head>
         <title>Andrew Patterson</title>
-        <base href="/">
+        <base href="/admin">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="/static/libs/bootstrap/dist/css/bootstrap.min.css">
@@ -14,18 +14,18 @@
 
         <script src="https://use.fontawesome.com/4af4026c41.js"></script>
 
-        <script src="/static/js/app.js"></script>
+        <script src="/static/js/admin/app.js"></script>
         <link rel="stylesheet" href="/static/css/custom.css">
     </head>
-    <body ng-app="myApp">
+    <body >
         <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
                     <ul class="nav nav-pills nav-justified">
-                        <li role="presentation"><a href="#!/Analyse"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i> Analyse</a></li>
-                        <li role="presentation"><a href="#!/posts"><i class="fa fa-user-o" aria-hidden="true"></i> Post</a></li>
-                        <li role="presentation"><a href="#!/messages"><i class="fa fa-envelope-o" aria-hidden="true"></i> Inbox</a></li>
+                        <li role="presentation"><a href="admin/analyse"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i> Analyse</a></li>
+                        <li role="presentation"><a href="admin/posts"><i class="fa fa-user-o" aria-hidden="true"></i> Post</a></li>
+                        <li role="presentation"><a href="admin/inbox"><i class="fa fa-envelope-o" aria-hidden="true"></i> Inbox</a></li>
                     </ul>
                 </div>
                 <div ng-view></div>
