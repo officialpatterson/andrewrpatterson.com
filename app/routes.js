@@ -1,6 +1,6 @@
 /*Define the HTTP routes of the application here*/
 var express = require('express');
-
+var inbox = require('./inbox/inboxcontroller.js');
 
 //create a new router variable
 var router = express.Router()
@@ -16,6 +16,7 @@ router.get('/github', function(req, res){
     res.redirect('http://github.com/officialpatterson');
 });
 
+router.route('/api/message').get(inbox.getMessages).post(inbox.postMessage);
 
 //default route - return the web application
 router.get('*', function(req, res){

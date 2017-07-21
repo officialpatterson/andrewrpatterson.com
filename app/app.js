@@ -1,15 +1,21 @@
 
 var express = require('express');
 var app = express();
+var mongoose   = require('mongoose');
+var bodyParser = require('body-parser')
 
-var routes = require('./routes/routes.js')
-
+var config = require('../config.json');
+var routes = require('./routes.js')
 // set the static files location /public
 app.use('/static', express.static(__dirname + '/public'));
 
+//connect to the mongoDB instance
+mongoose.connect(config.dburi); // connect to our database
 
-//set the views middleware - so we don't have to specify path everytime
- 
+ app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//set views
 app.use(function(req, res, next) {
     res.sendView = function(view) {
         return res.sendFile(__dirname + "/public/" + view);
