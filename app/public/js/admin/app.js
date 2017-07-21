@@ -25,7 +25,7 @@ var adminApp = angular.module('adminApp', ['ngRoute']);
 //controller for submitting messages to my inbox
 adminApp.controller('inboxController', function($scope, $http) {
   
-  $http.get("/api/message")
+  $http.get("/api/inbox")
     .then(function(response) {
         //First function handles success
         $scope.messages = response.data;

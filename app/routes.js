@@ -16,7 +16,7 @@ router.get('/github', function(req, res){
     res.redirect('http://github.com/officialpatterson');
 });
 
-router.route('/api/message').get(inbox.getMessages).post(inbox.postMessage);
+router.route('/api/inbox').get(inbox.getMessages).post(inbox.postMessage);
 
 //default route - return the web application
 router.get('*', function(req, res){

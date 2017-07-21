@@ -2,7 +2,9 @@
 var express = require('express');
 var app = express();
 var mongoose   = require('mongoose');
+mongoose.Promise = require("bluebird");
 var bodyParser = require('body-parser')
+var expressValidator = require('express-validator');
 
 var config = require('../config.json');
 var routes = require('./routes.js')
@@ -10,10 +12,12 @@ var routes = require('./routes.js')
 app.use('/static', express.static(__dirname + '/public'));
 
 //connect to the mongoDB instance
+
 mongoose.connect(config.dburi); // connect to our database
 
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(expressValidator()); // Add this after the bodyParser middlewares!
 
 //set views
 app.use(function(req, res, next) {

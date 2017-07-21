@@ -25,7 +25,7 @@ app.controller('messageController', function($scope, $http) {
   $scope.processForm = function() {
 
 
-  $http.post('/api/message', $scope.message).then(function(data){
+  $http.post('/api/inbox', $scope.message).then(function(data){
     // if successful, bind success message to message
     $scope.success = "success";
     
