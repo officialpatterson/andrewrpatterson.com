@@ -36,9 +36,9 @@ afterEach((done) => { //Before each test we empty the database
     
 //missing email address.
   describe('/POST inbox', () => {
-    var message = new Message({name: 'john doe', content: 'mymessage' });
-
+    
       it('Missing Post data: email', (done) => {
+        var message = new Message({name: 'john doe', content: 'mymessage' });
         chai.request(server)
             .post('/api/inbox')
             .send(message)
@@ -47,12 +47,10 @@ afterEach((done) => { //Before each test we empty the database
               done();
             });
       });
-  });
-//missing name field.
-  describe('/POST inbox', () => {
-      var message = new Message({ email: 'john.doe@yahoo.co.uk', content: 'mymessage' });
 
       it('Missing Post data: name', (done) => {
+        var message = new Message({ email: 'john.doe@yahoo.co.uk', content: 'mymessage' });
+
         chai.request(server)
             .post('/api/inbox')
             .send(message)
@@ -61,26 +59,10 @@ afterEach((done) => { //Before each test we empty the database
               done();
             });
       });
-  });
-    //missing content
-    describe('/POST inbox', () => {
-      var message = new Message({ email: 'john.doe@yahoo.co.uk', name: 'john doe' });
-
+      
       it('Missing Post data: content', (done) => {
-        chai.request(server)
-            .post('/api/inbox')
-            .send(message)
-            .end((err, res) => {
-                 res.should.have.status(400);
-              done();
-            });
-      });
-  });    
-  //malformed email address case
-  describe('/POST inbox', () => {
-    var message = new Message({ email: 'john.doeyahoo.com', name: 'john doe', content: 'mymessage' });
+        var message = new Message({ email: 'john.doe@yahoo.co.uk', name: 'john doe' });
 
-      it('Malformed email', (done) => {
         chai.request(server)
             .post('/api/inbox')
             .send(message)
@@ -89,10 +71,20 @@ afterEach((done) => { //Before each test we empty the database
               done();
             });
       });
-  });
-describe('/POST inbox', () => {
-      var message = new Message({ email: 'john.doe@yahoo.co.uk', name: 'john doe', content: 'mymessage' });
+    
+      it('Malformed email', (done) => {
+        var message = new Message({ email: 'john.doeyahoo.com', name: 'john doe', content: 'mymessage' });
+        chai.request(server)
+            .post('/api/inbox')
+            .send(message)
+            .end((err, res) => {
+                 res.should.have.status(400);
+              done();
+            });
+      });
       it('valid email', (done) => {
+        var message = new Message({ email: 'john.doe@yahoo.co.uk', name: 'john doe', content: 'mymessage' });
+
         chai.request(server)
             .post('/api/inbox')
             .send(message)
