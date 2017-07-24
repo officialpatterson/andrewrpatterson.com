@@ -32,13 +32,11 @@ module.exports = {
          });
         //if we get this far the post data has passed the checks.
         var blog = new Blog(req.body);
-        
         blog.save(function(err, blog) {
-            if (err) return res.status(500).send();
-    
-            res.status(200).send(blog);
-        
-            
+            if (err){
+                return res.status(500).send();
+            };
+            return res.status(200).send();
         }); 
     }
 }

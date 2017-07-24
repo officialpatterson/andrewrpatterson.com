@@ -6,7 +6,8 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl : 'static/views/front/profile.html'
   })
   .when("/blog", {
-    templateUrl : 'static/views/front/blog.html'
+    templateUrl : 'static/views/front/blog.html',
+    controller : 'blogController'
   })
   .when("/message", {
     templateUrl : 'static/views/front/message.html',
@@ -36,5 +37,19 @@ app.controller('messageController', function($scope, $http) {
     
   });
   };
+
+});
+
+//controller for displaying blog posts
+app.controller('blogController', function($scope, $http) {
+  
+   $http.get("/api/blog")
+    .then(function(response) {
+        //First function handles success
+        $scope.blogs = response.data;
+    }, function(response) {
+        //Second function handles error
+        $scope.error = "Something went wrong";
+    });
 
 });
