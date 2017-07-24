@@ -16,7 +16,11 @@ describe('Inbox', () => {
            done();         
         });     
     });
-
+afterEach((done) => { //Before each test we empty the database
+        Message.remove({}, (err) => { 
+           done();         
+        });     
+    });
   describe('/GET inbox', () => {
       it('returns all messages in inbox', (done) => {
         chai.request(server)

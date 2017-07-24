@@ -1,6 +1,7 @@
 /*Define the HTTP routes of the application here*/
 var express = require('express');
 var inbox = require('./inbox/inboxcontroller.js');
+var blog = require('./blog/blogcontroller.js');
 
 //create a new router variable
 var router = express.Router()
@@ -17,6 +18,8 @@ router.get('/github', function(req, res){
 });
 
 router.route('/api/inbox').get(inbox.getMessages).post(inbox.postMessage);
+router.route('/api/blog/:id').get(blog.getBlog);
+router.route('/api/blog').get(blog.getBlogs).post(blog.postBlog);
 
 //default route - return the web application
 router.get('*', function(req, res){

@@ -1,26 +1,28 @@
 
 
 <div class="col-md-6 col-md-offset-3">
-    <div class="alert alert-success alert-dismissible" role="alert"  ng-show="success">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Message sent!</strong>
-</div>
+    <div ng-show="success">
+        <h2 class="text-center">Message sent!</h2>
+        <p> I can usually reply within a few hours - hold tight!</p>
+    </div>
 <div class="alert alert-danger alert-dismissible" role="alert"  ng-show="failure">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <strong>Problem! - try again later maybe?</strong>
 </div>
-    <h2 class="text-center">Leave me a message!</h2>
-    <br>
+    
   <div class="form-group">
-    <form name="message-form" ng-submit="processForm()">
+    <form name="messageForm" ng-hide="messageForm.$submitted" ng-submit="processForm()">
+        <h2 class="text-center">Leave me a message!</h2>
+
+        <br>
         <div class="form-group">
-            <input type="text" class="form-control" ng-model="message.name" placeholder="Your Name">
+            <input type="text" class="form-control" ng-model="message.name" placeholder="Your Name" required>
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" ng-model="message.email" placeholder="Your Email Address">
+            <input type="email" class="form-control" ng-model="message.email" placeholder="Your Email Address" required>
         </div>
         <div class="form-group">
-            <textarea class="form-control" rows="5" ng-model="message.content"></textarea>
+            <textarea class="form-control" rows="5" ng-model="message.content" required></textarea>
         </div>
         <input class="btn btn-sample btn-block" type="submit" value="Send">
         <p>

@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "express-validator": "^3.2.1",
-    "mongoose": "^4.10.8"
+    "mongoose": "^4.7.3"
   },
   "devDependencies": {
     "chai-http": "^3.0.0",
