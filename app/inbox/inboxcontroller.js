@@ -30,10 +30,8 @@ module.exports = {
        //save the message to the message schema.
         message.save(function(err) {
             if (err) return res.status(500).send();
-    
-            res.status(200).send();
+            return res.status(200).send();
+        });
         
-            
-        }); 
     }
 }
