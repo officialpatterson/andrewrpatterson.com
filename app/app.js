@@ -6,7 +6,6 @@ mongoose.Promise = require("bluebird");
 var bodyParser = require('body-parser')
 var expressValidator = require('express-validator');
 
-var config = require('../config.json');
 var routes = require('./routes.js')
 // set the static files location /public
 app.use('/static', express.static(__dirname + '/public'));
