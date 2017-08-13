@@ -13,7 +13,7 @@ app.use('/static', express.static(__dirname + '/public'));
 
 //connect to the mongoDB instance
 
-mongoose.connect(config.dburi); // connect to our database
+mongoose.connect(process.env.DATABASE); // connect to our database
 
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
