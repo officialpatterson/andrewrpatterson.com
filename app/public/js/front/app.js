@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ngRoute"]);
+var app = angular.module("myApp", ["ngRoute"], );
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
@@ -46,6 +46,7 @@ app.controller('blogController', function($scope, $http) {
    $http.get("/api/blog")
     .then(function(response) {
         //First function handles success
+        console.log("API/BLOG");
         $scope.blogs = response.data;
     }, function(response) {
         //Second function handles error

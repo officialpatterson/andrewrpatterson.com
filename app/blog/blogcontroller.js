@@ -6,6 +6,7 @@ module.exports = {
             if (err)
                 res.send(err);
 
+            console.log(blogs);
             res.json(blogs);
            
         });
@@ -34,8 +35,10 @@ module.exports = {
         var blog = new Blog(req.body);
         blog.save(function(err, blog) {
             if (err){
+                console.log("500 ERROR");
                 return res.status(500).send();
             };
+            console.log("200 OK");
             return res.status(200).send();
         }); 
     }

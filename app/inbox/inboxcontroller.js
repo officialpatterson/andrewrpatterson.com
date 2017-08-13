@@ -5,7 +5,6 @@ module.exports = {
         Message.find(function(err, messages) {
             if (err)
                 res.send(err);
-
             res.json(messages);
            
         });
